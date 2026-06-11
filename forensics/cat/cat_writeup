@@ -1,0 +1,7 @@
+look for metadata of cat.jpg
+  found the image encoding type is of huffman coding 
+looked in header file ```head -20 cat.jpg```
+  got nothing 
+find the license key as base 64 encryption 
+decryote and got the flag 
+picoCTF{the_m3tadata_1s_modified}
